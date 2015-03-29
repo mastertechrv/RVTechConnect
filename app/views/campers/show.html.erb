@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @camper.model %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @camper.year %>
+</p>
+
+<p>
+  <strong>Vin:</strong>
+  <%= @camper.vin %>
+</p>
+
+<p>
+  <strong>Mileage:</strong>
+  <%= @camper.mileage %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @camper.customer_id %>
+</p>
+
+<p>
+  <strong>Make:</strong>
+  <%= @camper.make_id %>
+</p>
+
+<%= link_to 'Edit', edit_camper_path(@camper) %> |
+<%= link_to 'Back', campers_path %>
