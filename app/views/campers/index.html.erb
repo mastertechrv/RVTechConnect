@@ -20,7 +20,7 @@
         <td><%= camper.year %></td>
         <td><%= camper.vin %></td>
         <td><%= camper.mileage %></td>
-        <td><%= collection_select(:customer, :customer_id, Customer.all, :id, :firstname) %></td><!-- Help !-->
+        <td><%= collection_select(:customer, :customer_id, Customer.all, :id, :firstname, :include_blank => true) %></td><!-- Help !-->
         <td><%= camper.make_id %></td><!-- Help !-->
         <td><%= link_to 'Show', camper, class: 'btn btn-info btn-xs' %></td>
         <td><%= link_to 'Edit', edit_camper_path(camper), class: 'btn btn-info btn-xs' %></td>

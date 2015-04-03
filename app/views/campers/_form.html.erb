@@ -28,7 +28,9 @@
     <%= f.text_field :mileage %>
   </div>
   <div class="field">
-    <%= collection_select :customer, :customer_id, Customer.all, :id, :firstname, :include_blank => true %>
+    <%= f.label "Customer Name" %><br>
+    <%= collection_select( :customer, :customer_id, Customer.all, :id, :firstname, {}, { :multiple => false } ) %>
+
   </div>
   <div class="field">
     <%= f.label "Manufacturer" %><br>
