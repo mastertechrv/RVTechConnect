@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 	
+  resources :rvmodels
+
+  resources :models
+
+  resources :makes
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :manufacturers
   resources :campers

@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :model %><br>
-    <%= f.text_field :model %>
+    <%= f.label "Pick a Model" %><br>
+    <%= collection_select :rvmodel, :rvmodel_id, Rvmodel.all, :id, :modelname, :include_blank => true %>
   </div>
   <div class="field">
     <%= f.label :year %><br>
@@ -28,14 +28,13 @@
     <%= f.text_field :mileage %>
   </div>
   <div class="field">
-    <%= f.label :customer_id %><br>
-    <%= f.number_field :customer_id %>
+    <%= collection_select :customer, :customer_id, Customer.all, :id, :firstname, :include_blank => true %>
   </div>
   <div class="field">
-    <%= f.label :make_id %><br>
-    <%= f.number_field :make_id %>
+    <%= f.label "Manufacturer" %><br>
+    <%= collection_select :make, :make_id, Make.all, :id, :name, :include_blank => true %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-success" %>
   </div>
 <% end %>

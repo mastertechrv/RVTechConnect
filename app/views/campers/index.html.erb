@@ -1,6 +1,6 @@
-<h1>Listing campers</h1>
+<h1>Listing Campers</h1>
 
-<table>
+<table id="campers_table" class="table table-striped table-bordered"  cellspacing="0" width="100%">
   <thead>
     <tr>
       <th>Model</th>
@@ -16,15 +16,15 @@
   <tbody>
     <% @campers.each do |camper| %>
       <tr>
-        <td><%= camper.model %></td>
+        <td><%= camper.rvmodel_id %></td><!-- Help !-->
         <td><%= camper.year %></td>
         <td><%= camper.vin %></td>
         <td><%= camper.mileage %></td>
-        <td><%= camper.customer_id %></td>
-        <td><%= camper.make_id %></td>
-        <td><%= link_to 'Show', camper %></td>
-        <td><%= link_to 'Edit', edit_camper_path(camper) %></td>
-        <td><%= link_to 'Destroy', camper, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= collection_select(:customer, :customer_id, Customer.all, :id, :firstname) %></td><!-- Help !-->
+        <td><%= camper.make_id %></td><!-- Help !-->
+        <td><%= link_to 'Show', camper, class: 'btn btn-info btn-xs' %></td>
+        <td><%= link_to 'Edit', edit_camper_path(camper), class: 'btn btn-info btn-xs' %></td>
+        <td><%= link_to 'Destroy', camper, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,12 @@
 
 <br>
 
-<%= link_to 'New Camper', new_camper_path %>
+<%= link_to 'New Camper', new_camper_path, class: 'btn btn-success' %>
+
+<script type="text/javascript">
+
+
+$(document).ready(function() {
+    $('#campers_table').dataTable();
+} );
+</script>

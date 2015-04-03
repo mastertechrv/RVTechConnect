@@ -5,6 +5,8 @@ class CampersController < ApplicationController
 
   def index
     @campers = Camper.all
+    @models = Rvmodel.all
+    @makes = Make.all
     respond_with(@campers)
   end
 
@@ -42,6 +44,6 @@ class CampersController < ApplicationController
     end
 
     def camper_params
-      params.require(:camper).permit(:model, :year, :vin, :mileage, :customer_id, :make_id)
+      params.require(:camper).permit(:year, :vin, :mileage, :customer_id, :make_id, :rvmodel_id)
     end
 end

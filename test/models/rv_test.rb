@@ -1,4 +1,4 @@
-require 'test_helper'
+railrequire 'test_helper'
 
 class RvTest < ActiveSupport::TestCase
   # test "the truth" do

@@ -1,0 +1,25 @@
+<h1>Listing rvmodels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Modelname</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rvmodels.each do |rvmodel| %>
+      <tr>
+        <td><%= rvmodel.modelname %></td>
+        <td><%= link_to 'Show', rvmodel %></td>
+        <td><%= link_to 'Edit', edit_rvmodel_path(rvmodel) %></td>
+        <td><%= link_to 'Destroy', rvmodel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rvmodel', new_rvmodel_path %>

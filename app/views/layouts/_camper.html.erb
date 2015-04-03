@@ -1,0 +1,17 @@
+<div class="col-md-3">
+	<div class="camper">
+		<div class="panel panel-primary">
+			<% @campers.each do |camper| %>
+				<div class="panel-body">
+					<ul>
+						<li><%= link_to "#{camper.rvmodel_id}", camper.rvmodel_id %></li>
+					</ul>
+
+
+				</div>
+			<% end %>
+
+		</div>
+
+	</div>
+</div>

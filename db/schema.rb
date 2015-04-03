@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329044327) do
+ActiveRecord::Schema.define(version: 20150403123632) do
 
   create_table "campers", force: true do |t|
-    t.string   "model"
     t.string   "year"
     t.string   "vin"
     t.string   "mileage"
     t.integer  "customer_id"
     t.integer  "make_id"
+    t.integer  "rvmodel_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -58,8 +58,15 @@ ActiveRecord::Schema.define(version: 20150329044327) do
   add_index "customers", ["email"], name: "index_customers_on_email", unique: true, using: :btree
   add_index "customers", ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true, using: :btree
 
-  create_table "manufacturers", force: true do |t|
-    t.string   "make"
+  create_table "makes", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rvmodels", force: true do |t|
+    t.string   "modelname"
+    t.integer  "make_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

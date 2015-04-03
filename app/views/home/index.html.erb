@@ -5,7 +5,8 @@
 	  <!-- Nav tabs -->
 	  <ul class="nav nav-tabs" role="tablist">
 	    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
-	    <li role="presentation"><a href="#camper" aria-controls="profile" role="tab" data-toggle="tab">My RV's</a></li>
+	    <li role="presentation"><a href="#camper" 	aria-controls="profile" role="tab" data-toggle="tab">My RV's</a></li>
+	    <li role="presentation"><%= link_to 'All RVs', campers_path, role: "tab" %></li>
 	    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
 	    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
 	  </ul>
@@ -13,14 +14,14 @@
 	  <!-- Tab panes -->
 	  <div class="tab-content">
 	    <div role="tabpanel" class="tab-pane active" id="home">
-
-
-
-
 	    </div>
-	    <div role="tabpanel" class="tab-pane" id="camper">...</div>
+	    <div role="tabpanel" class="tab-pane" id="camper">
+	    		<%= render 'layouts/camper' %>
+	    </div>
+	    <div role="tabpanel" class="tab-pane" id="campers">
 	    <div role="tabpanel" class="tab-pane" id="messages">...</div>
-	    <div role="tabpanel" class="tab-pane" id="settings">...</div>
+	    <div role="tabpanel" class="tab-pane" id="settings">
+	    </div>
 	  </div>
 
 </div>
@@ -28,7 +29,7 @@
 <hr>
 
 	<%= link_to "#{current_customer.firstname}'s Profile", edit_customer_registration_path, class: 'btn btn-info' %>
-<%= link_to "Logout My Account", destroy_customer_session_path, :method => :delete, class: "btn btn-warning" %>
+	<%= link_to "Logout My Account", destroy_customer_session_path, :method => :delete, class: "btn btn-warning" %>
 <% else %>
 	<h1>Welcome to RV Tech Connect!</h1>
 	<p>Tech Connect is a Web Application for Master Tech RV Designed by Blake Watkins &amp; Developed by Austin Klenk</p>

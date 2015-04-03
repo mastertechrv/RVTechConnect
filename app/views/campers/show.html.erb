@@ -2,7 +2,7 @@
 
 <p>
   <strong>Model:</strong>
-  <%= @camper.model %>
+  <%= @camper.rvmodel_id %>
 </p>
 
 <p>
@@ -22,13 +22,14 @@
 
 <p>
   <strong>Customer:</strong>
-  <%= @camper.customer_id %>
+  <%= collection_select :customer, :customer_id, Customer.all, :id, :firstname %>
 </p>
 
 <p>
   <strong>Make:</strong>
-  <%= @camper.make_id %>
-</p>
+  Fill in Austin
+
+
 
 <%= link_to 'Edit', edit_camper_path(@camper) %> |
 <%= link_to 'Back', campers_path %>
